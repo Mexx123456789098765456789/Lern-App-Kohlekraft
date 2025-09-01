@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraftwerk App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .view-container {
+            max-width: 4xl;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <!-- Hauptmenü Ansicht -->
+    <div id="main-menu" class="view-container">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
+            Wissens-App
+        </h1>
+        <p class="text-gray-600 text-center mb-10">
+            Wählen Sie ein Thema aus, um mehr zu erfahren und Ihr Wissen zu testen.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <button onclick="showView('kohlekraftwerk')" class="bg-blue-500 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                Wie ein Kohlekraftwerk funktioniert
+            </button>
+            <button onclick="showView('about')" class="bg-gray-300 text-gray-800 py-4 px-6 rounded-lg font-semibold hover:bg-gray-400 transition-colors">
+                Über dieses Projekt
+            </button>
+        </div>
+    </div>
+
+    <!-- Ansicht Kohlekraftwerk -->
+    <div id="kohlekraftwerk" class="view-container hidden">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
+            Kohlekraftwerk
+        </h1>
+        <p class="text-gray-600 text-center mb-10">
+            Eine strukturierte Einführung in die grundlegenden Prinzipien der Stromerzeugung aus Kohle.
+        </p>
+
+        <!-- Schritte-Container -->
+        <div id="steps-container">
+            <!-- Schritt 1: Verbrennung -->
+            <div id="step-1" class="step bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">1</div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Die Verbrennung</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Alles beginnt mit der Verbrennung von Kohle in einem Kessel, wodurch Wärmeenergie freigesetzt wird.
+                </p>
+                <button onclick="showNextStep(2)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
+                    Nächster Schritt
+                </button>
+            </div>
+
+            <!-- Schritt 2: Wassererhitzung -->
+            <div id="step-2" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">2</div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Wassererhitzung zu Dampf</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Die Wärme wird genutzt, um Wasser zu Hochdruckdampf zu erhitzen.
+                </p>
+                <button onclick="showNextStep(3)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
+                    Nächster Schritt
+                </button>
+            </div>
+
+            <!-- Schritt 3: Turbine -->
+            <div id="step-3" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">3</div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Die Turbine</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Der Dampf treibt eine Turbine an, die sich dadurch schnell dreht.
+                </p>
+                <button onclick="showNextStep(4)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
+                    Nächster Schritt
+                </button>
+            </div>
+
+            <!-- Schritt 4: Generator -->
+            <div id="step-4" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">4</div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Der Generator</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Die rotierende Turbine ist mit einem Generator verbunden, der die mechanische in elektrische Energie umwandelt.
+                </p>
+                <button onclick="showNextStep(5)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
+                    Nächster Schritt
+                </button>
+            </div>
+
+            <!-- Schritt 5: Kühlung und Kondensation -->
+            <div id="step-5" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">5</div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Kühlung und Kondensation</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Der Dampf wird wieder zu Wasser abgekühlt, um den Kreislauf fortzusetzen.
+                </p>
+                <button onclick="showNextStep(6)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
+                    Nächster Schritt
+                </button>
+            </div>
+
+            <!-- Schritt 6: Stromübertragung -->
+            <div id="step-6" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">6</div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Stromübertragung</h2>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Der erzeugte Strom wird über das Stromnetz zu den Verbrauchern transportiert.
+                </p>
+                <button onclick="startQuiz()" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                    Zum Quiz
+                </button>
+            </div>
+            
+            <button onclick="showView('main-menu')" class="mt-4 text-gray-500 hover:text-gray-700 transition-colors">
+                < Zurück zum Hauptmenü
+            </button>
+        </div>
+    </div>
+
+    <!-- Über das Projekt Ansicht (Placeholder) -->
+    <div id="about" class="view-container hidden">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
+            Über dieses Projekt
+        </h1>
+        <p class="text-gray-600 text-center mb-4">
+            Diese App wurde erstellt, um die Funktionsweise eines Kohlekraftwerks einfach zu erklären. Sie können die Schritte lernen und Ihr Wissen in einem kleinen Quiz testen.
+        </p>
+        <div class="flex justify-center">
+            <button onclick="showView('main-menu')" class="mt-4 bg-gray-300 text-gray-800 py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors">
+                Zurück zum Menü
+            </button>
+        </div>
+    </div>
+
+    <!-- Quiz Ansicht -->
+    <div id="quiz" class="view-container hidden">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
+            Quiz: Kohlekraftwerk
+        </h1>
+        <p class="text-gray-600 text-center mb-8">
+            Testen Sie Ihr Wissen über die Funktionsweise eines Kohlekraftwerks.
+        </p>
+        <div id="quiz-questions">
+            <!-- Fragen werden hier dynamisch eingefügt -->
+        </div>
+        <div class="flex justify-center mt-8">
+            <button onclick="submitQuiz()" class="bg-green-500 text-white py-2 px-6 rounded-full font-semibold hover:bg-green-600 transition-colors">
+                Antworten überprüfen
+            </button>
+        </div>
+        <div class="flex justify-center mt-4">
+            <button onclick="showView('main-menu')" class="text-gray-500 hover:text-gray-700 transition-colors">
+                < Zurück zum Hauptmenü
+            </button>
+        </div>
+    </div>
+
+    <!-- Message box für Quiz-Ergebnisse -->
+    <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+            <p id="message-text" class="text-xl mb-4"></p>
+            <button onclick="hideMessage()" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const views = ['main-menu', 'kohlekraftwerk', 'about', 'quiz'];
+        const quizQuestions = [
+            {
+                question: "Was wird in einem Kohlekraftwerk verbrannt, um Wärme zu erzeugen?",
+                options: ["Holz", "Kohle", "Gas", "Öl"],
+                answer: 1
+            },
+            {
+                question: "Was bringt der Hochdruckdampf zum Drehen?",
+                options: ["Den Generator", "Die Turbine", "Das Förderband", "Den Kühlturm"],
+                answer: 1
+            },
+            {
+                question: "Welche Energieform wandelt der Generator in elektrische Energie um?",
+                options: ["Chemische Energie", "Wärmeenergie", "Mechanische Energie", "Atomare Energie"],
+                answer: 2
+            }
+        ];
+
+        function showView(viewId) {
+            views.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(viewId).classList.remove('hidden');
+
+            if (viewId === 'kohlekraftwerk') {
+                showNextStep(1); // Setze den Lehrpfad zurück
+            }
+        }
+
+        function showNextStep(stepNumber) {
+            const steps = document.querySelectorAll('#steps-container .step');
+            steps.forEach(step => step.classList.add('hidden'));
+
+            const currentStep = document.getElementById(`step-${stepNumber}`);
+            if (currentStep) {
+                currentStep.classList.remove('hidden');
+            }
+        }
+        
+        function startQuiz() {
+            showView('quiz');
+            renderQuizQuestions();
+        }
+
+        function renderQuizQuestions() {
+            const container = document.getElementById('quiz-questions');
+            container.innerHTML = '';
+            quizQuestions.forEach((q, index) => {
+                const questionHtml = `
+                    <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                        <p class="font-semibold mb-2">${index + 1}. ${q.question}</p>
+                        ${q.options.map((option, i) => `
+                            <label class="block mb-2">
+                                <input type="radio" name="question-${index}" value="${i}" class="mr-2">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                container.innerHTML += questionHtml;
+            });
+        }
+
+        function submitQuiz() {
+            let correctAnswers = 0;
+            let allAnswered = true;
+
+            quizQuestions.forEach((q, index) => {
+                const radios = document.getElementsByName(`question-${index}`);
+                let selectedOption = -1;
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        selectedOption = parseInt(radio.value);
+                    }
+                });
+
+                if (selectedOption === -1) {
+                    allAnswered = false;
+                } else if (selectedOption === q.answer) {
+                    correctAnswers++;
+                }
+            });
+
+            if (!allAnswered) {
+                showMessage("Bitte beantworten Sie alle Fragen, bevor Sie fortfahren.");
+                return;
+            }
+
+            const totalQuestions = quizQuestions.length;
+            const score = Math.round((correctAnswers / totalQuestions) * 100);
+            let message = `Sie haben ${correctAnswers} von ${totalQuestions} Fragen richtig beantwortet. (${score}%)`;
+
+            if (score === 100) {
+                message += " "
+                message += " Herzlichen Glückwunsch! Perfekte Punktzahl!";
+            } else if (score >= 70) {
+                message += " "
+                message += " Gut gemacht! Sie haben die Grundlagen verstanden.";
+            } else {
+                message += " 
+
+[Image of a lightbulb]
+"
+                message += " Das war noch nicht ganz perfekt. Versuchen Sie es noch einmal oder lesen Sie sich die Schritte noch einmal durch.";
+            }
+            
+            showMessage(message);
+        }
+
+        function showMessage(message) {
+            document.getElementById('message-text').innerHTML = message;
+            document.getElementById('message-box').classList.remove('hidden');
+        }
+
+        function hideMessage() {
+            document.getElementById('message-box').classList.add('hidden');
+        }
+
+        // Starte die App, indem das Hauptmenü angezeigt wird.
+        window.onload = function() {
+            showView('main-menu');
+        };
+    </script>
+</body>
+</html>
