@@ -54,95 +54,9 @@
             Eine strukturierte Einführung in die grundlegenden Prinzipien der Stromerzeugung aus Kohle.
         </p>
 
-        <!-- Schritte-Container -->
-        <div id="steps-container">
-            <!-- Schritt 1: Verbrennung -->
-            <div id="step-1" class="step bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
-                <div class="flex items-center mb-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">1</div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Die Verbrennung</h2>
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Alles beginnt mit der Verbrennung von Kohle in einem Kessel, wodurch Wärmeenergie freigesetzt wird.
-                </p>
-                <button onclick="showNextStep(2)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
-                    Nächster Schritt
-                </button>
-            </div>
-
-            <!-- Schritt 2: Wassererhitzung -->
-            <div id="step-2" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
-                <div class="flex items-center mb-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">2</div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Wassererhitzung zu Dampf</h2>
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Die Wärme wird genutzt, um Wasser zu Hochdruckdampf zu erhitzen.
-                </p>
-                <button onclick="showNextStep(3)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
-                    Nächster Schritt
-                </button>
-            </div>
-
-            <!-- Schritt 3: Turbine -->
-            <div id="step-3" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
-                <div class="flex items-center mb-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">3</div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Die Turbine</h2>
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Der Dampf treibt eine Turbine an, die sich dadurch schnell dreht.
-                </p>
-                <button onclick="showNextStep(4)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
-                    Nächster Schritt
-                </button>
-            </div>
-
-            <!-- Schritt 4: Generator -->
-            <div id="step-4" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
-                <div class="flex items-center mb-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">4</div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Der Generator</h2>
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Die rotierende Turbine ist mit einem Generator verbunden, der die mechanische in elektrische Energie umwandelt.
-                </p>
-                <button onclick="showNextStep(5)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
-                    Nächster Schritt
-                </button>
-            </div>
-
-            <!-- Schritt 5: Kühlung und Kondensation -->
-            <div id="step-5" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
-                <div class="flex items-center mb-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">5</div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Kühlung und Kondensation</h2>
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Der Dampf wird wieder zu Wasser abgekühlt, um den Kreislauf fortzusetzen.
-                </p>
-                <button onclick="showNextStep(6)" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">
-                    Nächster Schritt
-                </button>
-            </div>
-
-            <!-- Schritt 6: Stromübertragung -->
-            <div id="step-6" class="step hidden bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
-                <div class="flex items-center mb-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">6</div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Stromübertragung</h2>
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Der erzeugte Strom wird über das Stromnetz zu den Verbrauchern transportiert.
-                </p>
-                <button onclick="startQuiz()" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
-                    Zum Quiz
-                </button>
-            </div>
-            
-            <button onclick="showView('main-menu')" class="mt-4 text-gray-500 hover:text-gray-700 transition-colors">
-                < Zurück zum Hauptmenü
-            </button>
+        <!-- Lernschritte-Container -->
+        <div id="learning-container">
+            <!-- Inhalte werden hier dynamisch eingefügt -->
         </div>
     </div>
 
@@ -177,11 +91,6 @@
                 Antworten überprüfen
             </button>
         </div>
-        <div class="flex justify-center mt-4">
-            <button onclick="showView('main-menu')" class="text-gray-500 hover:text-gray-700 transition-colors">
-                < Zurück zum Hauptmenü
-            </button>
-        </div>
     </div>
 
     <!-- Message box für Quiz-Ergebnisse -->
@@ -194,23 +103,61 @@
 
     <script>
         const views = ['main-menu', 'kohlekraftwerk', 'about', 'quiz'];
-        const quizQuestions = [
+        const learningSteps = [
             {
-                question: "Was wird in einem Kohlekraftwerk verbrannt, um Wärme zu erzeugen?",
-                options: ["Holz", "Kohle", "Gas", "Öl"],
-                answer: 1
+                title: "Grundprinzip: Vom Stein zum Strom",
+                content: "Ein Kohlekraftwerk wandelt die in Kohle gespeicherte chemische Energie in elektrische Energie um. Dieser Prozess folgt einem einfachen Prinzip: Hitze erzeugt Dampf, Dampf treibt eine Turbine an, die Turbine dreht einen Generator, und der Generator erzeugt Strom. "
             },
             {
-                question: "Was bringt der Hochdruckdampf zum Drehen?",
-                options: ["Den Generator", "Die Turbine", "Das Förderband", "Den Kühlturm"],
-                answer: 1
+                title: "1. Die Verbrennung",
+                content: "Alles beginnt mit der Verbrennung von Kohle. Die Kohle wird gemahlen und in einem großen Kessel verbrannt. Durch die Verbrennung wird eine immense Menge an Wärmeenergie freigesetzt, die den nächsten Schritt antreibt. Diese Verbrennung ist der Kern des gesamten Prozesses, da sie die Energie liefert, die das Kraftwerk benötigt, um zu funktionieren."
+            },
+            {
+                title: "2. Wassererhitzung zu Dampf",
+                content: "Die durch die Verbrennung entstandene Wärme erhitzt Wasser in einem Rohrsystem innerhalb des Kessels. Das Wasser wird so stark erhitzt, dass es zu Hochdruckdampf wird. Die Energie der Kohle ist jetzt in der Energie des heißen Dampfes gespeichert."
+            },
+            {
+                title: "3. Die Turbine und der Generator",
+                content: "Der unter hohem Druck stehende Dampf wird durch Düsen auf die Schaufeln einer Turbine geleitet. Die Kraft des Dampfes bringt die Turbine zum Rotieren. Die sich drehende Turbine ist direkt mit einem Generator verbunden. Der Generator wandelt die mechanische Drehbewegung der Turbine in elektrische Energie um."
+            },
+            {
+                title: "4. Der geschlossene Kreislauf",
+                content: "Nachdem der Dampf seine Arbeit in der Turbine verrichtet hat, wird er in einem Kondensator abgekühlt. Dabei wird der Dampf wieder zu Wasser, das in den Kessel zurückgepumpt wird, um den Kreislauf zu schließen. So wird Wasser kontinuierlich wiederverwendet und die Energieumwandlung kann fortgesetzt werden. Oft wird hierfür Wasser aus nahegelegenen Flüssen oder Seen genutzt, weshalb Kraftwerke oft in der Nähe von Gewässern stehen."
+            },
+            {
+                title: "5. Umweltauswirkungen",
+                content: "Die Stromerzeugung aus Kohle hat erhebliche Umweltauswirkungen. Die Verbrennung von Kohle setzt große Mengen an Kohlendioxid ($CO_2$) frei, das maßgeblich zum Klimawandel beiträgt. Weitere Schadstoffe wie Schwefeldioxid ($SO_2$) und Stickoxide ($NO_x$) führen zu saurem Regen und Luftverschmutzung. Moderne Kraftwerke sind mit Filtern ausgestattet, um diese Emissionen zu reduzieren, aber sie können nicht vollständig verhindert werden."
+            },
+            {
+                title: "6. Die Zukunft der Kohle",
+                content: "Angesichts der Umweltauswirkungen und des Übergangs zu erneuerbaren Energien spielen Kohlekraftwerke eine immer geringere Rolle in der globalen Stromerzeugung. Viele Länder haben Pläne, aus der Kohleverstromung auszusteigen, um die Klimaziele zu erreichen. Technologien wie Carbon Capture and Storage (CCS) könnten die Emissionen reduzieren, aber die langfristige Zukunft liegt in saubereren Energiequellen wie Sonne, Wind und Wasser."
+            }
+        ];
+        
+        const quizQuestions = [
+            {
+                question: "Was erzeugt Dampf in einem Kohlekraftwerk?",
+                options: ["Die Turbine", "Der Generator", "Der Kessel", "Der Kühlturm"],
+                answer: 2
             },
             {
                 question: "Welche Energieform wandelt der Generator in elektrische Energie um?",
-                options: ["Chemische Energie", "Wärmeenergie", "Mechanische Energie", "Atomare Energie"],
+                options: ["Wärmeenergie", "Chemische Energie", "Mechanische Energie", "Sonnenenergie"],
+                answer: 2
+            },
+            {
+                question: "Was ist der Haupttreiber für die globale Erwärmung, der bei der Kohleverbrennung freigesetzt wird?",
+                options: ["Schwefeldioxid", "Stickoxide", "Kohlendioxid", "Wasserdampf"],
+                answer: 2
+            },
+            {
+                question: "Was ist die Hauptaufgabe des Kondensators?",
+                options: ["Kohle verbrennen", "Strom erzeugen", "Dampf kühlen und wieder zu Wasser machen", "Luft filtern"],
                 answer: 2
             }
         ];
+
+        let currentStepIndex = 0;
 
         function showView(viewId) {
             views.forEach(id => {
@@ -219,20 +166,54 @@
             document.getElementById(viewId).classList.remove('hidden');
 
             if (viewId === 'kohlekraftwerk') {
-                showNextStep(1); // Setze den Lehrpfad zurück
+                currentStepIndex = 0;
+                renderLearningStep(currentStepIndex);
             }
         }
 
-        function showNextStep(stepNumber) {
-            const steps = document.querySelectorAll('#steps-container .step');
-            steps.forEach(step => step.classList.add('hidden'));
+        function renderLearningStep(stepIndex) {
+            const container = document.getElementById('learning-container');
+            const step = learningSteps[stepIndex];
+            const isLastStep = stepIndex === learningSteps.length - 1;
 
-            const currentStep = document.getElementById(`step-${stepNumber}`);
-            if (currentStep) {
-                currentStep.classList.remove('hidden');
+            let buttonHTML = '';
+            if (isLastStep) {
+                buttonHTML = `<button onclick="startQuiz()" class="bg-green-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-green-600 transition-colors">Zum Quiz</button>`;
+            } else {
+                buttonHTML = `<button onclick="nextStep()" class="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-blue-600 transition-colors">Nächster Schritt</button>`;
+            }
+
+            const backButtonHTML = stepIndex > 0 ? `<button onclick="prevStep()" class="mt-4 mr-4 text-gray-500 hover:text-gray-700 transition-colors"> < Vorheriger Schritt</button>` : '';
+
+            container.innerHTML = `
+                <div class="bg-gray-100 p-6 rounded-lg mb-8 shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-700 mb-4">${step.title}</h2>
+                    <p class="text-gray-600 mb-6">${step.content}</p>
+                    <div class="flex items-center">
+                        ${backButtonHTML}
+                        ${buttonHTML}
+                    </div>
+                </div>
+                <button onclick="showView('main-menu')" class="mt-4 text-gray-500 hover:text-gray-700 transition-colors">
+                    < Zurück zum Hauptmenü
+                </button>
+            `;
+        }
+
+        function nextStep() {
+            if (currentStepIndex < learningSteps.length - 1) {
+                currentStepIndex++;
+                renderLearningStep(currentStepIndex);
             }
         }
-        
+
+        function prevStep() {
+            if (currentStepIndex > 0) {
+                currentStepIndex--;
+                renderLearningStep(currentStepIndex);
+            }
+        }
+
         function startQuiz() {
             showView('quiz');
             renderQuizQuestions();
@@ -255,6 +236,13 @@
                 `;
                 container.innerHTML += questionHtml;
             });
+
+            // Füge den "Zurück zum Hauptmenü" Button am Ende hinzu
+            container.innerHTML += `<div class="flex justify-center mt-4">
+                                        <button onclick="showView('main-menu')" class="text-gray-500 hover:text-gray-700 transition-colors">
+                                            < Zurück zum Hauptmenü
+                                        </button>
+                                    </div>`;
         }
 
         function submitQuiz() {
@@ -287,17 +275,11 @@
             let message = `Sie haben ${correctAnswers} von ${totalQuestions} Fragen richtig beantwortet. (${score}%)`;
 
             if (score === 100) {
-                message += " "
-                message += " Herzlichen Glückwunsch! Perfekte Punktzahl!";
+                message += "<br> Herzlichen Glückwunsch! Perfekte Punktzahl!";
             } else if (score >= 70) {
-                message += " "
-                message += " Gut gemacht! Sie haben die Grundlagen verstanden.";
+                message += "<br> Gut gemacht! Sie haben die Grundlagen verstanden.";
             } else {
-                message += " 
-
-[Image of a lightbulb]
-"
-                message += " Das war noch nicht ganz perfekt. Versuchen Sie es noch einmal oder lesen Sie sich die Schritte noch einmal durch.";
+                message += "<br> Das war noch nicht ganz perfekt. Versuchen Sie es noch einmal oder lesen Sie sich die Schritte noch einmal durch.";
             }
             
             showMessage(message);
@@ -319,3 +301,4 @@
     </script>
 </body>
 </html>
+
